@@ -1,0 +1,19 @@
+<div class="mt-5">
+    <button (click)="exibirProdutos()">Exibir</button>
+</div>
+<div>
+    <div class="container text-center">
+        <div class="row">
+            <div class="col" *ngFor="let p of produtosExibidos">
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">{{p.name}}</h5>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item" *ngFor="let dado of p.data | keyvalue">{{dado.key}} {{dado.value}}</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

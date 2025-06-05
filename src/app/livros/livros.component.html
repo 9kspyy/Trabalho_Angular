@@ -1,0 +1,10 @@
+<div class="card" style="width: 18rem;" *ngFor="let livro of ListaLivros">
+  <div class="card-header">
+    Título: {{livro.title}}
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">Autor: {{livro.author}}</li>
+    <li class="list-group-item">Páginas: {{livro.pages}}</li>
+  </ul>
+</div>
+<br>
