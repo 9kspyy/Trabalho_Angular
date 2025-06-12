@@ -1,0 +1,34 @@
+<div class="input-group flex-nowrap mt-5">
+    <span class="input-group-text" id="addon-wrapping">Nome</span>
+    <input [(ngModel)]="produto.name" type="text" class="form-control" placeholder="Username" aria-label="Username"
+        aria-describedby="addon-wrapping">
+</div>
+<br>
+<div class="input-group flex-nowrap">
+    <span class="input-group-text" id="addon-wrapping">Capacidade</span>
+    <input [(ngModel)]="produto.data.capacidae" type="text" class="form-control" placeholder="Username"
+        aria-label="Username" aria-describedby="addon-wrapping">
+</div>
+<br>
+<div class="input-group flex-nowrap">
+    <span class="input-group-text" id="addon-wrapping">Cor</span>
+    <input [(ngModel)]="produto.data.cor" type="text" class="form-control" placeholder="Username" aria-label="Username"
+        aria-describedby="addon-wrapping">
+</div>
+<br>
+<div class="input-group flex-nowrap">
+    <span class="input-group-text" id="addon-wrapping">Preço</span>
+    <input [(ngModel)]="produto.data.preco" type="text" class="form-control" placeholder="Username" aria-label="Username"
+        aria-describedby="addon-wrapping">
+</div>
+<br>
+<button (click)="cadastrar()" type="button" class="btn btn-primary">Cadastrar</button>
+
+
+
+
+<div *ngIf="resposta">
+
+    {{resposta.id}}
+
+</div>

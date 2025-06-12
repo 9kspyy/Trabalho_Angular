@@ -1,19 +1,48 @@
-<div class="mt-5">
-    <button (click)="exibirProdutos()">Exibir</button>
-</div>
 <div>
-    <div class="container text-center">
-        <div class="row">
-            <div class="col" *ngFor="let p of produtosExibidos">
-                <div class="card" style="width: 18rem;">
-                    <div class="card-body">
-                        <h5 class="card-title">{{p.name}}</h5>
+
+
+    <div class="d-flex justify-content-center" style="margin-top: 70px;">
+        <button class="btn btn-outline-dark" (click)="exibirProdutos()">Exibir Todos</button>
+    </div>
+    <div class="d-flex justify-content-center">
+        <div class="mt-5 w-50 input-group mb-3">
+            <button (click)="consultar()" class="btn btn-outline-dark" type="button" id="button-addon1">Consultar por
+                ID</button>
+            <input [(ngModel)]="id" type="text" class="form-control backAzul" placeholder=""
+                aria-label="Example text with button addon" aria-describedby="button-addon1">
+        </div>
+    </div>
+
+    <div>
+        <div class="container text-center" *ngIf="exibirTodos">
+            <div class="row">
+                <div class="col" *ngFor="let p of produtosExibidos">
+                    <div class="card" style="width: 18rem;">
+                        <div class="card-body">
+                            <h5 class="card-title">{{p.name}}</h5>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item" *ngFor="let dado of p.data | keyvalue">{{dado.key}}
+                                {{dado.value}}
+                            </li>
+                        </ul>
                     </div>
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item" *ngFor="let dado of p.data | keyvalue">{{dado.key}} {{dado.value}}</li>
-                    </ul>
                 </div>
             </div>
+        </div>
+    </div>
+
+    <div *ngIf="exibirUnicoProduto" class="d-flex justify-content-center">
+        <div class="card w-25 border border-success">
+            <div class="card-header">
+                {{resposta.name}}
+            </div>
+            <ul class="list-group border border-success list-group-flush">
+                <li class="list-group-item border-success justify-text-end">{{resposta.data.cor}}</li>
+                <li class="list-group-item border-success">{{resposta.data.capacidae}}</li>
+                <li class="list-group-item border-success">{{resposta.data.preco}}</li>
+                <li class="list-group-item border-success">{{resposta.id}}</li>
+            </ul>
         </div>
     </div>
 </div>

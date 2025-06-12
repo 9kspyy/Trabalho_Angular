@@ -13,9 +13,18 @@ export class ProdutosService {
 
   gettodosprodutos(){
     var url = this.urlBaseApi + 'objects';
-    return this.http.get(url);
-    
+    return this.http.get(url); 
   }
 
+  getProdutosID(id: any){
+    var url = this.urlBaseApi + `objects/${id}`;
+    return this.http.get(url);
+  }
 
+  postProduto(objeto: any){
+    var url = this.urlBaseApi + 'objects';
+    return this.http.post(url, objeto); 
+  }
+
+  
 }
